@@ -8,10 +8,8 @@ public class ApplicationTest {
 
     // Getter Tests
     @Test
-    public void getDogTest
-
-    {
-        String name = "Pogo"
+    public void getDogNameTest() {
+        String name = "Pogo";
         Dog dog = new Dog(name);
 
         String actual = dog.getName();
@@ -19,10 +17,8 @@ public class ApplicationTest {
     }
 
     @Test
-    public void getCatTest
-
-    {
-        String name = "Momo"
+    public void getCatNameTest() {
+        String name = "Momo";
         Cat cat = new Cat(name);
 
         String actual = cat.getName();
@@ -30,10 +26,8 @@ public class ApplicationTest {
     }
 
     @Test
-    public void getHamsterTest
-
-    {
-        String name = "Hamtaro"
+    public void getHamsterNameTest() {
+        String name = "Hamtaro";
         Hamster hamster = new Hamster(name);
 
         String actual = hamster.getName();
@@ -44,10 +38,8 @@ public class ApplicationTest {
     // Setter Tests
 
     @Test
-    public void setDogTest
-
-    {
-        String name = "Pogo"
+    public void setDogNameTest() {
+        String name = "Pogo";
         Dog dog = new Dog(name);
         String newName = "Blue";
         dog.setName(newName);
@@ -58,10 +50,8 @@ public class ApplicationTest {
     }
 
     @Test
-    public void getCatTest
-
-    {
-        String name = "Momo"
+    public void setCatNameTest() {
+        String name = "Momo";
         Cat cat = new Cat(name);
         String newName = "Momomomo";
         cat.setName(newName);
@@ -71,10 +61,8 @@ public class ApplicationTest {
     }
 
     @Test
-    public void getHamsterTest
-
-    {
-        String name = "Hamtaro"
+    public void setHamsterNameTest() {
+        String name = "Hamtaro";
         Hamster hamster = new Hamster(name);
         String newName = "Tamagotchi";
         hamster.setName(newName);
@@ -86,10 +74,8 @@ public class ApplicationTest {
     // Speak Tests
 
     @Test
-    public void speakDogTest
-
-    {
-        String name = "Pogo"
+    public void speakDogTest() {
+        String name = "Pogo";
         Dog dog = new Dog(name);
 
         String expected = "Bark!";
@@ -98,10 +84,8 @@ public class ApplicationTest {
     }
 
     @Test
-    public void getCatTest
-
-    {
-        String name = "Momo"
+    public void speakCatTest() {
+        String name = "Momo";
         Cat cat = new Cat(name);
 
         String expected = "Meow!";
@@ -110,10 +94,8 @@ public class ApplicationTest {
     }
 
     @Test
-    public void getHamsterTest
-
-    {
-        String name = "Hamtaro"
+    public void speakHamsterTest() {
+        String name = "Hamtaro";
         Hamster hamster = new Hamster(name);
 
         String expected = "meep";
@@ -124,7 +106,7 @@ public class ApplicationTest {
     // Sort Method Tests
 
     @Test
-    public void sortPetTest{
+    public void sortPetTest() {
         Pet pet1 = new Cat("Momo");
         Pet pet2 = new Dog("Old Yeller");
         Pet pet3 = new Hamster("Meepers Jeepers");
@@ -132,7 +114,7 @@ public class ApplicationTest {
         Pet[] input = {pet2, pet3, pet1};
         Pet[] expected = {pet1, pet2, pet3};
 
-        PetSorter sorter = new PerSorter(input);
+        PetSorter sorter = new PetSorter(input);
         Pet[] actual = sorter.sort();
         Assert.assertArrayEquals(expected, actual);
     }
@@ -140,7 +122,7 @@ public class ApplicationTest {
     // compareTo Tests
 
     @Test
-    public void compareToNegativeTest{
+    public void compareToNegativeTest() {
         Pet pet1 = new Cat("Momo");
         Pet pet2 = new Dog("Old Yeller");
 
@@ -149,38 +131,39 @@ public class ApplicationTest {
     }
 
     @Test
-    public void compareToNegativeTest2{
+    public void compareToNegativeTest2() {
         Pet pet1 = new Cat("Momo");
         Pet pet2 = new Dog("Momo");
 
-        boolean actual = (pet1.compareTo(pet2) < 0);
-        Assert.assertTrue(actual);
+        Integer actual = (pet1.compareTo(pet2) );
+        Assert.assertTrue(actual < 0);
     }
 
     @Test
-    public void compareToNeutralTest{
+    public void compareToNeutralTest() {
         Pet pet1 = new Cat("Momo");
         Pet pet2 = new Cat("Momo");
 
-        boolean actual = (pet1.compareTo(pet2) == 0);
-        Assert.assertTrue(actual);
+        Integer actual = (pet1.compareTo(pet2));
+        Assert.assertTrue(actual == 0);
     }
 
     @Test
-    public void compareToPositiveTest1{
+    public void compareToPositiveTest1() {
         Pet pet1 = new Cat("Thomas");
         Pet pet2 = new Dog("Momo");
 
-        boolean actual = (pet1.compareTo(pet2) > 0);
-        Assert.assertTrue(actual);
+        Integer actual = (pet1.compareTo(pet2));
+        Assert.assertTrue(actual> 0);
     }
 
     @Test
-    public void compareToPositiveTest2{
+    public void compareToPositiveTest2() {
         Pet pet1 = new Hamster("Momo");
         Pet pet2 = new Dog("Momo");
 
-        boolean actual = (pet1.compareTo(pet2) > 0);
-        Assert.assertTrue(actual);
+        Integer actual = (pet1.compareTo(pet2));
+        Assert.assertTrue(actual > 0);
     }
+
 }
