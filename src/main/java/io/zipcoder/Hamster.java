@@ -9,10 +9,9 @@ public class Hamster extends Pet{
 
     public String getName() {
         return name;
-
     }
 
     public String speak() {
-        return "Meep!";
+        return "meep";
     }
 }

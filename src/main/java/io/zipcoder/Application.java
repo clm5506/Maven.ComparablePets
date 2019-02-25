@@ -11,7 +11,6 @@ public class Application {
         Integer petCount;
 
         ArrayList<Pet> petArray = new ArrayList<Pet>();
-        //SortedMap<String, String> petMap = new TreeMap<String, String>();
 
         IOConsole ioCons = new IOConsole();
 
